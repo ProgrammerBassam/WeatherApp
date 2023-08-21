@@ -1,5 +1,8 @@
 # WeatherApp
-Weather App Task 
+Weather App Task that load weather data accroding to the user current location and has the ability to search about weather in different cities and states.
+
+# APK Link
+[Download APK](https://developer.android.com/kotlin/flow)
 
 # Build Versions
   * Min SDK is 21
@@ -37,7 +40,6 @@ Weather App Task
 The app architecture has three layers: a [data layer](https://developer.android.com/jetpack/guide/data-layer), a [domain layer](https://developer.android.com/jetpack/guide/domain-layer) and a [UI layer](https://developer.android.com/jetpack/guide/ui-layer).
 
 The architecture follows a reactive programming model with [unidirectional data flow](https://developer.android.com/jetpack/guide/ui-layer#udf). With the data layer at the bottom, the key concepts are:
-
 
 
 *   Higher layers react to changes in lower layers.
