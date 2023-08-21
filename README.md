@@ -48,6 +48,10 @@ The architecture follows a reactive programming model with [unidirectional data 
 
 The data flow is achieved using streams, implemented using [Kotlin Flows](https://developer.android.com/kotlin/flow).
 
+<center>
+<img src="https://i.ibb.co/CKg5CmV/architecture-1-overall.png" width="600px" alt="Diagram showing overall app architecture" />
+</center>
+
 ### Example: Displaying weather data on the Home screen
 When the app is first run it will attempt to load weather data from server if location not granted it will ask for the location permission . Once loaded, these are shown to the user based on the current location.
 
