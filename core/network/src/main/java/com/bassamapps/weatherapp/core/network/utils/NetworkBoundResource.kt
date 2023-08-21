@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/21/23, 4:35 PM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/21/23, 4:35 PM
+ *  * Last modified 8/21/23, 4:44 PM
  *
  */
 
@@ -10,26 +10,39 @@ package com.bassamapps.weatherapp.core.network.utils
 
 import com.bassamapps.weatherapp.core.network.Dispatcher
 import com.bassamapps.weatherapp.core.network.WeDispatchers
+import com.bassamapps.weatherapp.core.result.Result
 import com.google.gson.JsonParser
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
 import okhttp3.ResponseBody
 import retrofit2.HttpException
 import retrofit2.Response
 import java.io.IOException
 import java.net.SocketTimeoutException
-import com.bassamapps.weatherapp.core.result.Result
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
+/**
+ * Network bound resource
+ *
+ * @property ioDispatcher
+ * @constructor Create empty Network bound resource
+ */
 class NetworkBoundResource @Inject constructor(
     @Dispatcher(WeDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
 ){
 
+    /**
+     * Download data
+     *
+     * @param ResultType
+     * @param api
+     * @receiver
+     * @return
+     */
     suspend fun<ResultType> downloadData(api : suspend () -> Response<ResultType>): Flow<Result<ResultType>> {
         return withContext(ioDispatcher) {
             flow {

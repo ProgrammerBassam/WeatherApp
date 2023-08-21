@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/19/23, 9:59 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -15,6 +15,12 @@ import com.bassamapps.weatherapp.core.model.data.UserData
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
+/**
+ * We preferences data source
+ *
+ * @property userPreferences
+ * @constructor Create empty We preferences data source
+ */
 class WePreferencesDataSource @Inject constructor(
     private val userPreferences: DataStore<UserPreferences>,
 ) {
@@ -48,6 +54,11 @@ class WePreferencesDataSource @Inject constructor(
             )
         }
 
+    /**
+     * Set use gps
+     *
+     * @param newValue
+     */
     suspend fun setUseGps(newValue: Boolean) {
         userPreferences.updateData {
             it.copy {
@@ -56,6 +67,11 @@ class WePreferencesDataSource @Inject constructor(
         }
     }
 
+    /**
+     * Set is temp c
+     *
+     * @param newValue
+     */
     suspend fun setIsTempC(newValue: Boolean) {
         userPreferences.updateData {
             it.copy {
@@ -64,6 +80,11 @@ class WePreferencesDataSource @Inject constructor(
         }
     }
 
+    /**
+     * Set is first time
+     *
+     * @param newValue
+     */
     suspend fun setIsFirstTime(newValue: Boolean) {
         userPreferences.updateData {
             it.copy {
@@ -72,6 +93,11 @@ class WePreferencesDataSource @Inject constructor(
         }
     }
 
+    /**
+     * Set weather city name
+     *
+     * @param newValue
+     */
     suspend fun setWeatherCityName(newValue: String) {
         userPreferences.updateData {
             it.copy {
@@ -81,6 +107,11 @@ class WePreferencesDataSource @Inject constructor(
     }
 
 
+    /**
+     * Set theme brand
+     *
+     * @param themeBrand
+     */
     suspend fun setThemeBrand(themeBrand: ThemeBrand) {
         userPreferences.updateData {
             it.copy {
@@ -92,6 +123,11 @@ class WePreferencesDataSource @Inject constructor(
         }
     }
 
+    /**
+     * Set dynamic color preference
+     *
+     * @param useDynamicColor
+     */
     suspend fun setDynamicColorPreference(useDynamicColor: Boolean) {
         userPreferences.updateData {
             it.copy {
@@ -100,6 +136,11 @@ class WePreferencesDataSource @Inject constructor(
         }
     }
 
+    /**
+     * Set dark theme config
+     *
+     * @param darkThemeConfig
+     */
     suspend fun setDarkThemeConfig(darkThemeConfig: DarkThemeConfig) {
         userPreferences.updateData {
             it.copy {

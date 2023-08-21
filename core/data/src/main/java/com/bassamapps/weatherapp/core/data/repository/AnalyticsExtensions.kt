@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/14/23, 8:04 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -12,6 +12,11 @@ import  com.bassamapps.weatherapp.core.analytics.AnalyticsEvent
 import  com.bassamapps.weatherapp.core.analytics.AnalyticsEvent.Param
 import  com.bassamapps.weatherapp.core.analytics.AnalyticsHelper
 
+/**
+ * Log theme changed
+ *
+ * @param themeName
+ */
 fun AnalyticsHelper.logThemeChanged(themeName: String) =
     logEvent(
         AnalyticsEvent(
@@ -22,6 +27,11 @@ fun AnalyticsHelper.logThemeChanged(themeName: String) =
         ),
     )
 
+/**
+ * Log dark theme config changed
+ *
+ * @param darkThemeConfigName
+ */
 fun AnalyticsHelper.logDarkThemeConfigChanged(darkThemeConfigName: String) =
     logEvent(
         AnalyticsEvent(
@@ -32,6 +42,11 @@ fun AnalyticsHelper.logDarkThemeConfigChanged(darkThemeConfigName: String) =
         ),
     )
 
+/**
+ * Log dynamic color preference changed
+ *
+ * @param useDynamicColor
+ */
 fun AnalyticsHelper.logDynamicColorPreferenceChanged(useDynamicColor: Boolean) =
     logEvent(
         AnalyticsEvent(

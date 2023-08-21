@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/19/23, 10:25 PM
+ *  * Last modified 8/21/23, 8:01 PM
  *
  */
 
@@ -80,15 +80,20 @@ import com.bassamapps.weatherapp.core.model.data.WeatherHeadData
 import com.bassamapps.weatherapp.core.ui.ErrorScreen
 import com.bassamapps.weatherapp.core.ui.TrackScreenViewEvent
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
-import com.google.accompanist.permissions.PermissionStatus
 import com.google.accompanist.permissions.rememberMultiplePermissionsState
 import com.bassamapps.weatherapp.core.ui.R as uiR
 
 
+/**
+ * Home route
+ *
+ * @param modifier
+ * @param viewModel
+ */
 @Composable
 internal fun HomeRoute(
-    viewModel: HomeViewModel = hiltViewModel(),
     modifier: Modifier = Modifier,
+    viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val uiAction = remember(viewModel){
@@ -108,6 +113,16 @@ internal fun HomeRoute(
     )
 }
 
+/**
+ * Home screen
+ *
+ * @param uiState
+ * @param onReload
+ * @param onRefresh
+ * @param modifier
+ * @receiver
+ * @receiver
+ */
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 internal fun HomeScreen(
@@ -163,6 +178,14 @@ internal fun HomeScreen(
     TrackScreenViewEvent(screenName = "Home")
 }
 
+/**
+ * Loading state
+ *
+ * @param isLoading
+ * @param isRefreshing
+ * @param modifier
+ * @param pullRefreshState
+ */
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun LoadingState(
@@ -201,6 +224,12 @@ fun LoadingState(
     }
 }
 
+/**
+ * Home body
+ *
+ * @param currentWeather
+ * @param state
+ */
 @Composable
 fun HomeBody(
     currentWeather: WeatherData,
@@ -252,6 +281,11 @@ fun HomeBody(
     }
 }
 
+/**
+ * Head section
+ *
+ * @param headData
+ */
 @OptIn(ExperimentalFoundationApi::class)
 fun LazyListScope.headSection(
     headData: WeatherHeadData,
@@ -263,6 +297,11 @@ fun LazyListScope.headSection(
     }
 }
 
+/**
+ * Head section body
+ *
+ * @param weatherHeadData
+ */
 @Composable
 fun HeadSectionBody(
     weatherHeadData: WeatherHeadData
@@ -312,6 +351,11 @@ fun HeadSectionBody(
     }
 }
 
+/**
+ * Day forecast weather card
+ *
+ * @param forecastData
+ */
 fun LazyListScope.dayForecastWeatherCard(
     forecastData: WeatherForecastHourData,
 ) {
@@ -340,6 +384,11 @@ fun LazyListScope.dayForecastWeatherCard(
     }
 }
 
+/**
+ * Day forecast weather head
+ *
+ * @param data
+ */
 @Composable
 fun DayForecastWeatherHead(
     data: WeatherForecastHourData
@@ -361,6 +410,11 @@ fun DayForecastWeatherHead(
     }
 }
 
+/**
+ * Day forecast weather list
+ *
+ * @param items
+ */
 @Composable
 fun DayForecastWeatherList(
     items: List<HourData>
@@ -378,6 +432,11 @@ fun DayForecastWeatherList(
     }
 }
 
+/**
+ * Day forecast weather item
+ *
+ * @param item
+ */
 @Composable
 internal fun DayForecastWeatherItem(
     item: HourData
@@ -413,6 +472,11 @@ internal fun DayForecastWeatherItem(
 }
 
 
+/**
+ * Future weather card
+ *
+ * @param futureData
+ */
 fun LazyListScope.futureWeatherCard(
     futureData: List<FutureWeatherData>,
 ) {
@@ -421,6 +485,11 @@ fun LazyListScope.futureWeatherCard(
     )
 }
 
+/**
+ * Future weather list
+ *
+ * @param items
+ */
 fun LazyListScope.futureWeatherList(
     items: List<FutureWeatherData>
 ) {
@@ -431,6 +500,11 @@ fun LazyListScope.futureWeatherList(
     }
 }
 
+/**
+ * Future weather item
+ *
+ * @param item
+ */
 @Composable
 internal fun FutureWeatherItem(
     item: FutureWeatherData
@@ -489,6 +563,11 @@ internal fun FutureWeatherItem(
     }
 }
 
+/**
+ * Extra weather list
+ *
+ * @param extraData
+ */
 fun LazyListScope.extraWeatherList(
     extraData: WeatherExtraData,
 ) {
@@ -499,6 +578,11 @@ fun LazyListScope.extraWeatherList(
     }
 }
 
+/**
+ * Extra weather list body
+ *
+ * @param extraData
+ */
 @Composable
 internal fun ExtraWeatherListBody(
     extraData: WeatherExtraData
@@ -550,6 +634,14 @@ internal fun ExtraWeatherListBody(
     }
 }
 
+/**
+ * Extra info
+ *
+ * @param icon
+ * @param tint
+ * @param title
+ * @param subTitle
+ */
 @Composable
 internal fun ExtraInfo(
     icon: ImageVector,
@@ -606,6 +698,16 @@ internal fun ExtraInfo(
     }
 }
 
+/**
+ * Extra info for sun
+ *
+ * @param icon
+ * @param tint
+ * @param sunriseTitle
+ * @param sunrise
+ * @param sunsetTitle
+ * @param sunset
+ */
 @Composable
 internal fun ExtraInfoForSun(
     icon: ImageVector,
@@ -695,6 +797,11 @@ internal fun ExtraInfoForSun(
     }
 }
 
+/**
+ * Footer section
+ *
+ * @param footerData
+ */
 @Composable
 fun FooterSection(
     footerData: WeatherFooterData,
@@ -722,6 +829,10 @@ fun FooterSection(
     }
 }
 
+/**
+ * Location permission effect
+ *
+ */
 @Composable
 @OptIn(ExperimentalPermissionsApi::class)
 private fun LocationPermissionEffect() {
@@ -736,11 +847,6 @@ private fun LocationPermissionEffect() {
     )
 
     LaunchedEffect(locationPermissionsState) {
-        locationPermissionsState.permissions.forEach {
-            val status = it.status
-            if (status is PermissionStatus.Denied && !status.shouldShowRationale) {
-                it.launchPermissionRequest()
-            }
-        }
+        locationPermissionsState.launchMultiplePermissionRequest()
     }
 }

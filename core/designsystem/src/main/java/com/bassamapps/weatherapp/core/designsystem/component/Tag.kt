@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/18/23, 10:13 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -17,6 +17,16 @@ import androidx.compose.material3.contentColorFor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
+/**
+ * We topic tag
+ *
+ * @param modifier
+ * @param onClick
+ * @param enabled
+ * @param text
+ * @receiver
+ * @receiver
+ */
 @Composable
 fun WeTopicTag(
     modifier: Modifier = Modifier,

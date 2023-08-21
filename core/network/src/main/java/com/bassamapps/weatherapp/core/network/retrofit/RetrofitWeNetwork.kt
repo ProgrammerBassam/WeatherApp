@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/20/23, 12:13 AM
+ *  * Last modified 8/21/23, 8:55 PM
  *
  */
 
@@ -30,6 +30,16 @@ import javax.inject.Singleton
  */
 private interface RetrofitWeNetworkApi {
 
+    /**
+     * Get weather
+     *
+     * @param key
+     * @param q
+     * @param lang
+     * @param forecastday
+     * @param days
+     * @return
+     */
     @GET(value = "forecast.json")
     suspend fun getWeather(
         @Query("key") key: String,
@@ -39,6 +49,14 @@ private interface RetrofitWeNetworkApi {
         @Query("days") days: String,
     ): Response<NetworkWeather>
 
+    /**
+     * Get auto search complete
+     *
+     * @param key
+     * @param q
+     * @param lang
+     * @return
+     */
     @GET(value = "search.json")
     suspend fun getAutoSearchComplete(
         @Query("key") key: String,
@@ -51,7 +69,13 @@ private const val WE_BASE_URL = BuildConfig.BACKEND_URL
 
 
 /**
- * [Retrofit] backed [WeNetworkDataSource]
+ * Retrofit we network
+ *
+ * @property resourcesProvider
+ * @constructor
+ *
+ * @param networkJson
+ * @param okhttpCallFactory
  */
 @Singleton
 class RetrofitWeNetwork @Inject constructor(

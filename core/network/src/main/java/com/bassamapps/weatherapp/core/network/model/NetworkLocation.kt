@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/17/23, 3:31 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -13,7 +13,17 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
 
 /**
- * Network representation of [LocationData]
+ * Network location
+ *
+ * @property name
+ * @property region
+ * @property country
+ * @property lat
+ * @property lon
+ * @property tzId
+ * @property localtimeEpoch
+ * @property localtime
+ * @constructor Create empty Network location
  */
 @Serializable
 class NetworkLocation (

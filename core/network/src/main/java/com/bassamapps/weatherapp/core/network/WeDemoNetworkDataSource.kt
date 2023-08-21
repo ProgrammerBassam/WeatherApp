@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/21/23, 7:26 PM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/21/23, 7:26 PM
+ *  * Last modified 8/21/23, 7:27 PM
  *
  */
 
@@ -12,10 +12,25 @@ import com.bassamapps.weatherapp.core.network.model.NetworkSearchComplete
 import com.bassamapps.weatherapp.core.network.model.NetworkWeather
 
 
+/**
+ * We demo network data source
+ *
+ * @constructor Create empty We demo network data source
+ */
 interface WeDemoNetworkDataSource {
 
-    suspend fun getWeather(q: String) : NetworkWeather
+    /**
+     * Get weather
+     *
+     * @return
+     */
+    suspend fun getWeather() : NetworkWeather
 
-    suspend fun getAutoSearchComplete(q: String) : List<NetworkSearchComplete>
+    /**
+     * Get auto search complete
+     *
+     * @return
+     */
+    suspend fun getAutoSearchComplete() : List<NetworkSearchComplete>
 
 }

@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/19/23, 10:11 PM
+ *  * Last modified 8/20/23, 5:32 PM
  *
  */
 
@@ -32,6 +32,12 @@ import kotlinx.coroutines.flow.conflate
 import java.util.concurrent.Executors
 import javax.inject.Inject
 
+/**
+ * Location manager gps monitor
+ *
+ * @property context
+ * @constructor Create empty Location manager gps monitor
+ */
 class LocationManagerGpsMonitor @Inject constructor(
     @ApplicationContext private val context: Context
 ) : GpsMonitor {

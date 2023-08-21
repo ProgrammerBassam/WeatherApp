@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/14/23, 7:17 PM
+ *  * Last modified 8/21/23, 10:28 PM
  *
  */
 
@@ -24,19 +24,22 @@ class ResultKtTest {
         }
             .asResult()
             .test {
-                assertEquals(Result.Loading, awaitItem())
+                assertEquals(Result.Loading(true), awaitItem())
                 assertEquals(Result.Success(1), awaitItem())
 
                 when (val errorResult = awaitItem()) {
                     is Result.Error -> assertEquals(
                         "Test Done",
-                        errorResult.exception?.message,
+                        errorResult.message,
+
                     )
-                    Result.Loading,
+
                     is Result.Success,
                     -> throw IllegalStateException(
                         "The flow should have emitted an Error Result",
                     )
+
+                    else -> {}
                 }
 
                 awaitComplete()

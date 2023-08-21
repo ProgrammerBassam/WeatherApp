@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/21/23, 8:52 PM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/21/23, 8:52 PM
+ *  * Last modified 8/21/23, 8:55 PM
  *
  */
 
@@ -13,6 +13,11 @@ import com.bassamapps.weatherapp.core.network.model.NetworkSearchComplete
 import com.bassamapps.weatherapp.core.network.utils.Mapper
 import javax.inject.Inject
 
+/**
+ * Network search complete mapper
+ *
+ * @constructor Create empty Network search complete mapper
+ */
 class NetworkSearchCompleteMapper @Inject constructor() : Mapper<List<NetworkSearchComplete>, List<SearchCompleteResult>> {
     override fun mapFromApiResponse(data: List<NetworkSearchComplete>): List<SearchCompleteResult> {
         return data.map {

@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/14/23, 7:17 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -25,6 +25,12 @@ import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.conflate
 import javax.inject.Inject
 
+/**
+ * Connectivity manager network monitor
+ *
+ * @property context
+ * @constructor Create empty Connectivity manager network monitor
+ */
 class ConnectivityManagerNetworkMonitor @Inject constructor(
     @ApplicationContext private val context: Context,
 ) : NetworkMonitor {

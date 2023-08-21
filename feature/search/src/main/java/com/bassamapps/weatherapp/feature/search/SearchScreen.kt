@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/18/23, 11:18 PM
+ *  * Last modified 8/21/23, 9:05 PM
  *
  */
 
@@ -62,6 +62,16 @@ import com.bassamapps.weatherapp.core.designsystem.component.WeTopicTag
 import com.bassamapps.weatherapp.core.designsystem.icon.WeIcons
 import com.bassamapps.weatherapp.core.ui.TrackScreenViewEvent
 
+/**
+ * Search route
+ *
+ * @param modifier
+ * @param onBackClick
+ * @param onNavigateToSearchResult
+ * @param viewModel
+ * @receiver
+ * @receiver
+ */
 @Composable
 internal fun SearchRoute(
     modifier: Modifier = Modifier,
@@ -88,6 +98,22 @@ internal fun SearchRoute(
     )
 }
 
+/**
+ * Search screen
+ *
+ * @param modifier
+ * @param onBackClick
+ * @param onClearRecentSearches
+ * @param onSearchQueryChanged
+ * @param onSearchTriggered
+ * @param recentSearchesUiState
+ * @param searchQuery
+ * @param searchCompleteUiState
+ * @receiver
+ * @receiver
+ * @receiver
+ * @receiver
+ */
 @Composable
 internal fun SearchScreen(
     modifier: Modifier = Modifier,

@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/19/23, 7:10 PM
+ *  * Last modified 8/21/23, 9:19 PM
  *
  */
 
@@ -55,11 +55,17 @@ import com.bassamapps.weatherapp.feature.home.dayForecastWeatherCard
 import com.bassamapps.weatherapp.feature.home.extraWeatherList
 import com.bassamapps.weatherapp.feature.home.futureWeatherCard
 
+/**
+ * Search result route
+ *
+ * @param onBackClick
+ * @param viewModel
+ * @receiver
+ */
 @Composable
 internal fun SearchResultRoute(
     onBackClick: () -> Unit,
     viewModel: SearchResultViewModel = hiltViewModel(),
-    modifier: Modifier = Modifier,
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val uiAction = remember(viewModel){
@@ -80,14 +86,26 @@ internal fun SearchResultRoute(
     )
 }
 
+/**
+ * Search result screen
+ *
+ * @param modifier
+ * @param uiState
+ * @param onReload
+ * @param onRefresh
+ * @param onBackClick
+ * @receiver
+ * @receiver
+ * @receiver
+ */
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 internal fun SearchResultScreen(
+    modifier: Modifier = Modifier,
     uiState: WeatherUiState,
     onReload :()->Unit,
     onRefresh :()->Unit,
     onBackClick: () -> Unit = {},
-    modifier: Modifier = Modifier,
 ) {
     // This code should be called when the UI is ready for use and relates to Time To Full Display.
     ReportDrawnWhen { !uiState.isLoading }
@@ -136,6 +154,14 @@ internal fun SearchResultScreen(
     TrackScreenViewEvent(screenName = "SearchResult")
 }
 
+/**
+ * Search result body
+ *
+ * @param currentWeather
+ * @param state
+ * @param onBackClick
+ * @receiver
+ */
 @Composable
 fun SearchResultBody(
     currentWeather: WeatherData,
@@ -189,6 +215,13 @@ fun SearchResultBody(
     }
 }
 
+/**
+ * Search result section
+ *
+ * @param currentWeather
+ * @param onBackClick
+ * @receiver
+ */
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 fun LazyListScope.searchResultSection(
     currentWeather: WeatherData,

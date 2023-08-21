@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/19/23, 7:00 PM
+ *  * Last modified 8/21/23, 9:59 PM
  *
  */
 
@@ -27,6 +27,16 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * Search result view model
+ *
+ * @property userDataRepository
+ * @property getWeatherUseCase
+ * @property resultWeatherMapper
+ * @constructor
+ *
+ * @param savedStateHandle
+ */
 @Suppress("NAME_SHADOWING")
 @HiltViewModel
 class SearchResultViewModel @Inject constructor(

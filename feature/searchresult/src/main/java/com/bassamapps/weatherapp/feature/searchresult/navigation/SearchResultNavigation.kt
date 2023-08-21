@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/18/23, 11:09 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -18,10 +18,21 @@ import com.bassamapps.weatherapp.feature.searchresult.SearchResultRoute
 
 const val searchResultNavigationRoute = "search_result/{cityName}"
 
+/**
+ * Navigate to search result
+ *
+ * @param navOptions
+ */
 fun NavController.navigateToSearchResult(navOptions: NavOptions? = null) {
     this.navigate(searchResultNavigationRoute, navOptions)
 }
 
+/**
+ * Search result screen
+ *
+ * @param onBackClick
+ * @receiver
+ */
 fun NavGraphBuilder.searchResultScreen(
     onBackClick: () -> Unit,
 ) {

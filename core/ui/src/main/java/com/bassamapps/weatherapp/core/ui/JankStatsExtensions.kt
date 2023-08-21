@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/14/23, 7:17 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -22,9 +22,9 @@ import androidx.metrics.performance.PerformanceMetricsState.Holder
 import kotlinx.coroutines.CoroutineScope
 
 /**
- * Retrieves [PerformanceMetricsState.Holder] from current [LocalView] and
- * remembers it until the View changes.
- * @see PerformanceMetricsState.getHolderForHierarchy
+ * Remember metrics state holder
+ *
+ * @return
  */
 @Composable
 fun rememberMetricsStateHolder(): Holder {
@@ -36,9 +36,11 @@ fun rememberMetricsStateHolder(): Holder {
 }
 
 /**
- * Convenience function to work with [PerformanceMetricsState] state. The side effect is
- * re-launched if any of the [keys] value is not equal to the previous composition.
- * @see TrackDisposableJank if you need to work with DisposableEffect to cleanup added state.
+ * Track jank
+ *
+ * @param keys
+ * @param reportMetric
+ * @receiver
  */
 @Composable
 fun TrackJank(
@@ -52,8 +54,11 @@ fun TrackJank(
 }
 
 /**
- * Convenience function to work with [PerformanceMetricsState] state that needs to be cleaned up.
- * The side effect is re-launched if any of the [keys] value is not equal to the previous composition.
+ * Track disposable jank
+ *
+ * @param keys
+ * @param reportMetric
+ * @receiver
  */
 @Composable
 fun TrackDisposableJank(
@@ -67,7 +72,10 @@ fun TrackDisposableJank(
 }
 
 /**
- * Track jank while scrolling anything that's scrollable.
+ * Track scroll jank
+ *
+ * @param scrollableState
+ * @param stateName
  */
 @Composable
 fun TrackScrollJank(scrollableState: ScrollableState, stateName: String) {

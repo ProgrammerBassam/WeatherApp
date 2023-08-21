@@ -34,6 +34,7 @@ firebasePerfPlugin = "1.4.2"
 gmsPlugin = "4.3.14"
 googleOss = "17.0.1"
 googleOssPlugin = "0.10.6"
+dokkaPlugin = "1.8.20"
 hilt = "2.47"
 hiltExt = "1.0.0"
 jacoco = "0.8.7"
@@ -60,6 +61,7 @@ androidxComposeGoogleFonts = "1.5.0"
 androidxComposeMaterial = "1.6.0-alpha03"
 googleServiceLocation = "21.0.1"
 googleCodeGson = "2.10.1"
+
 
 [libraries]
 google-service-location = {group = "com.google.android.gms", name = "play-services-location", version.ref = "googleServiceLocation"}
@@ -119,6 +121,7 @@ firebase-performance = { group = "com.google.firebase", name = "firebase-perf-kt
 firebase-performance-gradle = { group = "com.google.firebase", name = "perf-plugin", version.ref = "firebasePerfPlugin" }
 google-oss-licenses = { group = "com.google.android.gms", name = "play-services-oss-licenses", version.ref = "googleOss" }
 google-oss-licenses-plugin = { group = "com.google.android.gms", name = "oss-licenses-plugin", version.ref = "googleOssPlugin" }
+dokka-plugin = { group = "org.jetbrains.dokka", name = "android-documentation-plugin", version.ref = "dokkaPlugin" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
@@ -154,6 +157,7 @@ ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devto
 junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
@@ -168,3 +172,4 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
 secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaPlugin"}

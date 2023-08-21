@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/20/23, 12:22 AM
+ *  * Last modified 8/21/23, 7:45 PM
  *
  */
 
@@ -16,6 +16,12 @@ import com.bassamapps.weatherapp.core.model.data.UserData
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
+/**
+ * User data repository
+ *
+ * @property wePreferencesDataSource
+ * @constructor Create empty User data repository
+ */
 class UserDataRepository @Inject constructor(
     private val wePreferencesDataSource: WePreferencesDataSource,
 ) : ImplUserDataRepository {

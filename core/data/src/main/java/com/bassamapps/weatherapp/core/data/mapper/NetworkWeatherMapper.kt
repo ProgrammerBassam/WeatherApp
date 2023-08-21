@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/21/23, 4:45 PM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/21/23, 4:45 PM
+ *  * Last modified 8/21/23, 4:52 PM
  *
  */
 
@@ -21,6 +21,11 @@ import com.bassamapps.weatherapp.core.network.model.NetworkWeather
 import com.bassamapps.weatherapp.core.network.utils.Mapper
 import javax.inject.Inject
 
+/**
+ * Network weather mapper
+ *
+ * @constructor Create empty Network weather mapper
+ */
 class NetworkWeatherMapper @Inject constructor() : Mapper<NetworkWeather, WeatherResult> {
     override fun mapFromApiResponse(data: NetworkWeather): WeatherResult {
         return WeatherResult(

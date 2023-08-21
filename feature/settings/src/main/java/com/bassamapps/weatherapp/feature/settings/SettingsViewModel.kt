@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/14/23, 7:17 PM
+ *  * Last modified 8/21/23, 9:27 PM
  *
  */
 
@@ -23,6 +23,12 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * Settings view model
+ *
+ * @property userDataRepository
+ * @constructor Create empty Settings view model
+ */
 @HiltViewModel
 class SettingsViewModel @Inject constructor(
     private val userDataRepository: UserDataRepository,
@@ -51,24 +57,44 @@ class SettingsViewModel @Inject constructor(
                 initialValue = Loading,
             )
 
+    /**
+     * Update theme brand
+     *
+     * @param themeBrand
+     */
     fun updateThemeBrand(themeBrand: ThemeBrand) {
         viewModelScope.launch {
             userDataRepository.setThemeBrand(themeBrand)
         }
     }
 
+    /**
+     * Update dark theme config
+     *
+     * @param darkThemeConfig
+     */
     fun updateDarkThemeConfig(darkThemeConfig: DarkThemeConfig) {
         viewModelScope.launch {
             userDataRepository.setDarkThemeConfig(darkThemeConfig)
         }
     }
 
+    /**
+     * Update dynamic color preference
+     *
+     * @param useDynamicColor
+     */
     fun updateDynamicColorPreference(useDynamicColor: Boolean) {
         viewModelScope.launch {
             userDataRepository.setDynamicColorPreference(useDynamicColor)
         }
     }
 
+    /**
+     * Update temp type
+     *
+     * @param isTempC
+     */
     fun updateTempType(isTempC: Boolean) {
         viewModelScope.launch {
             userDataRepository.setIsTempC(isTempC)
@@ -77,7 +103,13 @@ class SettingsViewModel @Inject constructor(
 }
 
 /**
- * Represents the settings which the user can edit within the app.
+ * User editable settings
+ *
+ * @property brand
+ * @property useDynamicColor
+ * @property darkThemeConfig
+ * @property isTempC
+ * @constructor Create empty User editable settings
  */
 data class UserEditableSettings(
     val brand: ThemeBrand,
@@ -86,7 +118,19 @@ data class UserEditableSettings(
     val isTempC: Boolean
 )
 
+/**
+ * Settings ui state
+ *
+ * @constructor Create empty Settings ui state
+ */
 sealed interface SettingsUiState {
     data object Loading : SettingsUiState
+
+    /**
+     * Success
+     *
+     * @property settings
+     * @constructor Create empty Success
+     */
     data class Success(val settings: UserEditableSettings) : SettingsUiState
 }

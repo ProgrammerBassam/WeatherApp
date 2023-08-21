@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/18/23, 9:33 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -44,6 +44,10 @@ import androidx.compose.ui.unit.dp
 import com.bassamapps.weatherapp.core.designsystem.theme.WeTheme
 import kotlinx.coroutines.launch
 
+/**
+ * Small loading
+ *
+ */
 @Composable
 fun SmallLoading(
 ) {
@@ -61,6 +65,10 @@ fun SmallLoading(
     }
 }
 
+/**
+ * Small loading preview
+ *
+ */
 @ThemePreviews
 @Composable
 fun SmallLoadingPreview() {

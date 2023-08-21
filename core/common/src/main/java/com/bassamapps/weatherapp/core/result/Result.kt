@@ -1,27 +1,81 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/20/23, 12:22 AM
+ *  * Last modified 8/21/23, 10:25 PM
  *
  */
 
 package com.bassamapps.weatherapp.core.result
 
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onStart
 
 
+/**
+ * Result
+ *
+ * @param R
+ * @constructor Create empty Result
+ */
 sealed class Result<out R> {
+    /**
+     * Success
+     *
+     * @param T
+     * @property data
+     * @constructor Create empty Success
+     */
     data class Success<out T>(val data: T) : Result<T>()
+
+    /**
+     * Loading
+     *
+     * @param T
+     * @property loading
+     * @constructor Create empty Loading
+     */
     data class Loading<out T>(val loading: Boolean) : Result<T>()
-    data class Error<out T>(val message: String,val code:Int) : Result<T>()
+
+    /**
+     * Error
+     *
+     * @param T
+     * @property message
+     * @property code
+     * @constructor Create empty Error
+     */
+    data class Error<out T>(val message: String, val code:Int) : Result<T>()
 }
 
+/**
+ * Mapper
+ *
+ * @param R
+ * @param E
+ * @constructor Create empty Mapper
+ */
 interface Mapper<R,E>{
+    /**
+     * Map from api response
+     *
+     * @param type
+     * @return
+     */
     fun mapFromApiResponse(type:R):E
 }
 
+/**
+ * Map from api response
+ *
+ * @param R
+ * @param E
+ * @param result
+ * @param mapper
+ * @return
+ */
 fun<R,E> mapFromApiResponse(result: Flow<Result<R>>, mapper: Mapper<R, E>): Flow<Result<E>> {
     return result.map {
         when(it){
@@ -32,28 +86,17 @@ fun<R,E> mapFromApiResponse(result: Flow<Result<R>>, mapper: Mapper<R, E>): Flow
     }
 }
 
-/* fun <T> Flow<T>.asResult(): Flow<NetworkResponse<T>> {
+/**
+ * As result
+ *
+ * @param T
+ * @return
+ */
+fun <T> Flow<T>.asResult(): Flow<Result<T>> {
     return this
-        .map { response ->
-            if (response is NetworkError) {
-                NetworkResponse.Error(response as NetworkError)
-            } else {
-                NetworkResponse.Success(response)
-            }
+        .map<T, Result<T>> {
+            Result.Success(it)
         }
-        .onStart { emit(NetworkResponse.Loading) }
-
-        .retryWhen { cause, attempt ->
-            if (cause is IOException && attempt < RETRY_ATTEMPT_COUNT) {
-                delay(RETRY_TIME_IN_MILLIS)
-                true
-            } else {
-                false
-            }
-        }
-        .catch {
-            Log.e("ininininv catch", it.toString())
-            emit(NetworkResponse.Exception(it))
-        }
+        .onStart { emit(Result.Loading(true)) }
+        .catch { emit(Result.Error(message = it.message.toString(), code = 0)) }
 }
-*/

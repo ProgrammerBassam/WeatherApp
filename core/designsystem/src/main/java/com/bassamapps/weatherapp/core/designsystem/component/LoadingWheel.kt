@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/14/23, 7:17 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -42,6 +42,12 @@ import androidx.compose.ui.unit.dp
 import com.bassamapps.weatherapp.core.designsystem.theme.WeTheme
 import kotlinx.coroutines.launch
 
+/**
+ * We loading wheel
+ *
+ * @param contentDesc
+ * @param modifier
+ */
 @Composable
 fun WeLoadingWheel(
     contentDesc: String,
@@ -122,6 +128,12 @@ fun WeLoadingWheel(
     }
 }
 
+/**
+ * We overlay loading wheel
+ *
+ * @param contentDesc
+ * @param modifier
+ */
 @Composable
 fun WeOverlayLoadingWheel(
     contentDesc: String,
@@ -140,6 +152,10 @@ fun WeOverlayLoadingWheel(
     }
 }
 
+/**
+ * We loading wheel preview
+ *
+ */
 @ThemePreviews
 @Composable
 fun WeLoadingWheelPreview() {
@@ -150,6 +166,10 @@ fun WeLoadingWheelPreview() {
     }
 }
 
+/**
+ * We overlay loading wheel preview
+ *
+ */
 @ThemePreviews
 @Composable
 fun WeOverlayLoadingWheelPreview() {

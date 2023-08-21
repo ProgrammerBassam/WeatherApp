@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/15/23, 10:17 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -53,6 +53,11 @@ import javax.inject.Inject
 
 private const val TAG = "MainActivity"
 
+/**
+ * Main activity
+ *
+ * @constructor Create empty Main activity
+ */
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

@@ -1,22 +1,21 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/18/23, 11:12 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
 package com.bassamapps.weatherapp.navigation
 
-import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import com.bassamapps.weatherapp.feature.home.navigation.homeNavigationRoute
-import com.bassamapps.weatherapp.ui.WeAppState
 import com.bassamapps.weatherapp.feature.home.navigation.homeScreen
 import com.bassamapps.weatherapp.feature.search.navigation.searchScreen
 import com.bassamapps.weatherapp.feature.searchresult.navigation.searchResultScreen
+import com.bassamapps.weatherapp.ui.WeAppState
 
 /**
  * Top-level navigation graph. Navigation is organized as explained at
@@ -28,7 +27,6 @@ import com.bassamapps.weatherapp.feature.searchresult.navigation.searchResultScr
 @Composable
 fun WeNavHost(
     appState: WeAppState,
-    onShowSnackbar: suspend (String, String?) -> Boolean,
     modifier: Modifier = Modifier,
     startDestination: String = homeNavigationRoute,
 ) {

@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/18/23, 4:52 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -15,6 +15,11 @@ import com.bassamapps.weatherapp.core.database.dao.RecentSearchQueryDao
 import com.bassamapps.weatherapp.core.database.model.RecentSearchQueryEntity
 import com.bassamapps.weatherapp.core.database.util.InstantConverter
 
+/**
+ * We database
+ *
+ * @constructor Create empty We database
+ */
 @Database(
     entities = [
         RecentSearchQueryEntity::class,
@@ -28,5 +33,10 @@ import com.bassamapps.weatherapp.core.database.util.InstantConverter
     InstantConverter::class,
 )
 abstract class WeDatabase : RoomDatabase() {
+    /**
+     * Recent search query dao
+     *
+     * @return
+     */
     abstract fun recentSearchQueryDao(): RecentSearchQueryDao
 }

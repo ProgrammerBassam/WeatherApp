@@ -1,17 +1,17 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/18/23, 5:12 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
 package com.bassamapps.weatherapp.core.data.repository
 
-import com.bassamapps.weatherapp.core.data.repository.impl.ImplRecentSearchRepository
-import com.bassamapps.weatherapp.core.database.dao.RecentSearchQueryDao
 import com.bassamapps.weatherapp.core.data.model.RecentSearchQuery
 import com.bassamapps.weatherapp.core.data.model.asExternalModel
+import com.bassamapps.weatherapp.core.data.repository.impl.ImplRecentSearchRepository
+import com.bassamapps.weatherapp.core.database.dao.RecentSearchQueryDao
 import com.bassamapps.weatherapp.core.database.model.RecentSearchQueryEntity
 import com.bassamapps.weatherapp.core.network.Dispatcher
 import com.bassamapps.weatherapp.core.network.WeDispatchers.IO
@@ -22,6 +22,13 @@ import kotlinx.coroutines.withContext
 import kotlinx.datetime.Clock
 import javax.inject.Inject
 
+/**
+ * Recent search repository
+ *
+ * @property recentSearchQueryDao
+ * @property ioDispatcher
+ * @constructor Create empty Recent search repository
+ */
 class RecentSearchRepository @Inject constructor(
     private val recentSearchQueryDao: RecentSearchQueryDao,
     @Dispatcher(IO) private val ioDispatcher: CoroutineDispatcher,

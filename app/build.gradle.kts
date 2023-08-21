@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/18/23, 10:50 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 import com.bassamapps.weatherapp.WeAppBuildType
@@ -16,6 +16,7 @@ plugins {
     id("jacoco")
     id("weatherapp.android.application.firebase")
     id("com.google.android.gms.oss-licenses-plugin")
+    id("org.jetbrains.dokka")
 }
 
 android {
@@ -45,17 +46,6 @@ android {
             // TODO: Abstract the signing configuration to a separate file to avoid hardcoding this.
             signingConfig = signingConfigs.getByName("debug")
         }
-       /* create("benchmark") {
-            // Enable all the optimizations from release build through initWith(release).
-            initWith(release)
-            matchingFallbacks.add("release")
-            // Debug key signing is available to everyone.
-            signingConfig = signingConfigs.getByName("debug")
-            // Only use benchmark proguard rules
-            proguardFiles("benchmark-rules.pro")
-            isMinifyEnabled = true
-            applicationIdSuffix = WeAppBuildType.BENCHMARK.applicationIdSuffix
-        }*/
     }
 
     packaging {
@@ -85,8 +75,6 @@ dependencies {
     implementation(project(":core:analytics"))
 
     androidTestImplementation(project(":core:testing"))
-   // androidTestImplementation(project(":core:datastore-test"))
-   // androidTestImplementation(project(":core:data-test"))
     androidTestImplementation(project(":core:network"))
     androidTestImplementation(libs.androidx.navigation.testing)
     androidTestImplementation(libs.accompanist.testharness)

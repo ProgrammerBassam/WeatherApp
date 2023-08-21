@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/20/23, 1:18 AM
+ *  * Last modified 8/21/23, 9:57 PM
  *
  */
 
@@ -29,6 +29,16 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
+/**
+ * Home view model
+ *
+ * @property context
+ * @property userDataRepository
+ * @property getWeatherUseCase
+ * @property resultWeatherMapper
+ * @property resourcesProvider
+ * @constructor Create empty Home view model
+ */
 @Suppress("NAME_SHADOWING")
 @HiltViewModel
 class HomeViewModel @Inject constructor(

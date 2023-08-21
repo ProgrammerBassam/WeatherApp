@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/20/23, 1:08 AM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -16,7 +16,32 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
 
 /**
- * Network representation of [CurrentData]
+ * Network current
+ *
+ * @property lastUpdatedEpoch
+ * @property lastUpdated
+ * @property tempC
+ * @property tempF
+ * @property isDay
+ * @property condition
+ * @property windMph
+ * @property windKph
+ * @property windDegree
+ * @property windDir
+ * @property pressureMb
+ * @property pressureIn
+ * @property precipMm
+ * @property precipIn
+ * @property humidity
+ * @property cloud
+ * @property feelsLikeC
+ * @property feelsLikeF
+ * @property visKm
+ * @property visMiles
+ * @property uv
+ * @property gustMph
+ * @property gustKph
+ * @constructor Create empty Network current
  */
 @Serializable
 data class NetworkCurrent (

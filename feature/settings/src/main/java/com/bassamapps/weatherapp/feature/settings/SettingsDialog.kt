@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/14/23, 7:17 PM
+ *  * Last modified 8/21/23, 9:28 PM
  *
  */
 
@@ -53,6 +53,13 @@ import com.bassamapps.weatherapp.feature.settings.R.string
 import com.bassamapps.weatherapp.feature.settings.SettingsUiState.Loading
 import com.bassamapps.weatherapp.feature.settings.SettingsUiState.Success
 
+/**
+ * Settings dialog
+ *
+ * @param onDismiss
+ * @param viewModel
+ * @receiver
+ */
 @Composable
 fun SettingsDialog(
     onDismiss: () -> Unit,
@@ -69,6 +76,22 @@ fun SettingsDialog(
     )
 }
 
+/**
+ * Settings dialog
+ *
+ * @param settingsUiState
+ * @param supportDynamicColor
+ * @param onDismiss
+ * @param onChangeThemeBrand
+ * @param onChangeDynamicColorPreference
+ * @param onChangeDarkThemeConfig
+ * @param onChangeTempType
+ * @receiver
+ * @receiver
+ * @receiver
+ * @receiver
+ * @receiver
+ */
 @Composable
 fun SettingsDialog(
     settingsUiState: SettingsUiState,
@@ -218,6 +241,14 @@ private fun SettingsDialogSectionTitle(text: String) {
     )
 }
 
+/**
+ * Settings dialog theme chooser row
+ *
+ * @param text
+ * @param selected
+ * @param onClick
+ * @receiver
+ */
 @Composable
 fun SettingsDialogThemeChooserRow(
     text: String,

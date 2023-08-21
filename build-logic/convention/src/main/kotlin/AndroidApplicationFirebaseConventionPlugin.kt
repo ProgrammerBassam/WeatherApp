@@ -1,14 +1,14 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/14/23, 7:17 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
 import com.android.build.api.dsl.ApplicationExtension
-import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
 import com.bassamapps.weatherapp.libs
+import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

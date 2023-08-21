@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/14/23, 7:17 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -18,7 +18,9 @@ import com.bassamapps.weatherapp.core.analytics.AnalyticsHelper
 import com.bassamapps.weatherapp.core.analytics.LocalAnalyticsHelper
 
 /**
- * Classes and functions associated with analytics events for the UI.
+ * Log screen view
+ *
+ * @param screenName
  */
 fun AnalyticsHelper.logScreenView(screenName: String) {
     logEvent(
@@ -31,6 +33,11 @@ fun AnalyticsHelper.logScreenView(screenName: String) {
     )
 }
 
+/**
+ * Log news resource opened
+ *
+ * @param newsResourceId
+ */
 fun AnalyticsHelper.logNewsResourceOpened(newsResourceId: String) {
     logEvent(
         event = AnalyticsEvent(
@@ -43,7 +50,10 @@ fun AnalyticsHelper.logNewsResourceOpened(newsResourceId: String) {
 }
 
 /**
- * A side-effect which records a screen view event.
+ * Track screen view event
+ *
+ * @param screenName
+ * @param analyticsHelper
  */
 @Composable
 fun TrackScreenViewEvent(

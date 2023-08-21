@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/18/23, 11:34 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -11,13 +11,10 @@
 package com.bassamapps.weatherapp.core.designsystem.component
 
 import androidx.annotation.StringRes
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.MediumTopAppBar
-import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarColors
@@ -30,16 +27,32 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.bassamapps.weatherapp.core.designsystem.icon.WeIcons
 
+/**
+ * We top app bar
+ *
+ * @param modifier
+ * @param titleRes
+ * @param titleString
+ * @param navigationIcon
+ * @param navigationIconContentDescription
+ * @param actionIcon
+ * @param actionIconContentDescription
+ * @param colors
+ * @param onNavigationClick
+ * @param onActionClick
+ * @receiver
+ * @receiver
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WeTopAppBar(
+    modifier: Modifier = Modifier,
     @StringRes titleRes: Int,
     titleString: String? = null,
     navigationIcon: ImageVector,
     navigationIconContentDescription: String?,
     actionIcon: ImageVector,
     actionIconContentDescription: String?,
-    modifier: Modifier = Modifier,
     colors: TopAppBarColors = TopAppBarDefaults.mediumTopAppBarColors(),
     onNavigationClick: () -> Unit = {},
     onActionClick: () -> Unit = {},
@@ -71,6 +84,15 @@ fun WeTopAppBar(
     )
 }
 
+/**
+ * We top app bar
+ *
+ * @param navigationIcon
+ * @param navigationIconContentDescription
+ * @param colors
+ * @param onNavigationClick
+ * @receiver
+ */
 @Composable
 fun WeTopAppBar(
     navigationIcon: ImageVector,

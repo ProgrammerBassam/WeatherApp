@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/19/23, 6:54 PM
+ *  * Last modified 8/21/23, 7:58 PM
  *
  */
 
@@ -10,6 +10,14 @@ package com.bassamapps.weatherapp.feature.searchresult
 
 import com.bassamapps.weatherapp.core.ui.ErrorType
 
+/**
+ * Search result ui state
+ *
+ * @property isRefreshing
+ * @property isError
+ * @property error
+ * @constructor Create empty Search result ui state
+ */
 data class SearchResultUiState(
     val isRefreshing: Boolean,
     val isError: Boolean,

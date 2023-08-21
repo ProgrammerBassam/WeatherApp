@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/19/23, 9:59 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -22,6 +22,13 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * Main activity view model
+ *
+ * @constructor
+ *
+ * @param userDataRepository
+ */
 @HiltViewModel
 class MainActivityViewModel @Inject constructor(
     userDataRepository: ImplUserDataRepository,
@@ -46,7 +53,19 @@ class MainActivityViewModel @Inject constructor(
 
 }
 
+/**
+ * Main activity ui state
+ *
+ * @constructor Create empty Main activity ui state
+ */
 sealed interface MainActivityUiState {
     data object Loading : MainActivityUiState
+
+    /**
+     * Success
+     *
+     * @property userData
+     * @constructor Create empty Success
+     */
     data class Success(val userData: UserData) : MainActivityUiState
 }

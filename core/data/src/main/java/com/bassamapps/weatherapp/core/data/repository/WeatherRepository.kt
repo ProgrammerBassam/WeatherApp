@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/19/23, 2:08 AM
+ *  * Last modified 8/21/23, 8:57 PM
  *
  */
 
@@ -34,7 +34,16 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 
-
+/**
+ * Weather repository
+ *
+ * @property ioDispatcher
+ * @property networkBoundResources
+ * @property weatherMapper
+ * @property searchCompleteMapper
+ * @property weNetworkDataSource
+ * @constructor Create empty Weather repository
+ */
 class WeatherRepository @Inject constructor (
     @Dispatcher(WeDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
     private val networkBoundResources: NetworkBoundResource,

@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/14/23, 7:17 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -11,8 +11,9 @@ package com.bassamapps.weatherapp.core.ui
 import androidx.compose.ui.tooling.preview.Preview
 
 /**
- * Multipreview annotation that represents various device sizes. Add this annotation to a composable
- * to render various devices.
+ * Device previews
+ *
+ * @constructor Create empty Device previews
  */
 @Preview(name = "phone", device = "spec:shape=Normal,width=360,height=640,unit=dp,dpi=480")
 @Preview(name = "landscape", device = "spec:shape=Normal,width=640,height=360,unit=dp,dpi=480")

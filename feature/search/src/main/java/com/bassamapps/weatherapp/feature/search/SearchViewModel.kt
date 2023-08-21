@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/18/23, 11:16 PM
+ *  * Last modified 8/21/23, 9:01 PM
  *
  */
 
@@ -32,6 +32,17 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * Search view model
+ *
+ * @property weatherRepository
+ * @property recentSearchRepository
+ * @property savedStateHandle
+ * @property analyticsHelper
+ * @constructor
+ *
+ * @param recentSearchQueriesUseCase
+ */
 @HiltViewModel
 class SearchViewModel @Inject constructor(
     private val weatherRepository: WeatherRepository,
@@ -87,17 +98,20 @@ class SearchViewModel @Inject constructor(
     }
 
 
+    /**
+     * On search query changed
+     *
+     * @param query
+     */
     fun onSearchQueryChanged(query: String) {
         savedStateHandle[SEARCH_QUERY] = query
         getSearchAutoCompleteData()
     }
 
     /**
-     * Called when the search action is explicitly triggered by the user. For example, when the
-     * search icon is tapped in the IME or when the enter key is pressed in the search text field.
+     * On search triggered
      *
-     * The search results are displayed on the fly as the user types, but to explicitly save the
-     * search query in the search text field, defining this method.
+     * @param query
      */
     fun onSearchTriggered(query: String) {
         viewModelScope.launch {
@@ -113,6 +127,10 @@ class SearchViewModel @Inject constructor(
         )
     }
 
+    /**
+     * Clear recent searches
+     *
+     */
     fun clearRecentSearches() {
         viewModelScope.launch {
             recentSearchRepository.clearRecentSearches()

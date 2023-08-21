@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/19/23, 9:16 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -34,6 +34,16 @@ import kotlinx.coroutines.flow.stateIn
 import androidx.tracing.trace
 import com.bassamapps.weatherapp.feature.searchresult.navigation.navigateToSearchResult
 
+/**
+ * Remember we app state
+ *
+ * @param windowSizeClass
+ * @param networkMonitor
+ * @param gpsMonitor
+ * @param coroutineScope
+ * @param navController
+ * @return
+ */
 @Composable
 fun rememberWeAppState(
     windowSizeClass: WindowSizeClass,
@@ -60,6 +70,17 @@ fun rememberWeAppState(
     }
 }
 
+/**
+ * We app state
+ *
+ * @property navController
+ * @property coroutineScope
+ * @property windowSizeClass
+ * @constructor
+ *
+ * @param networkMonitor
+ * @param gpsMonitor
+ */
 @Stable
 class WeAppState(
     val navController: NavHostController,
@@ -94,11 +115,9 @@ class WeAppState(
     val topLevelDestinations: List<TopLevelDestination> = TopLevelDestination.values().asList()
 
     /**
-     * UI logic for navigating to a top level destination in the app. Top level destinations have
-     * only one copy of the destination of the back stack, and save and restore state whenever you
-     * navigate to and from it.
+     * Navigate to top level destination
      *
-     * @param topLevelDestination: The destination the app needs to navigate to.
+     * @param topLevelDestination
      */
     fun navigateToTopLevelDestination(topLevelDestination: TopLevelDestination) {
         trace("Navigation: ${topLevelDestination.name}") {
@@ -124,6 +143,10 @@ class WeAppState(
     }
 
 
+    /**
+     * Navigate to search
+     *
+     */
     fun navigateToSearch() {
         navController.navigateToSearch()
     }

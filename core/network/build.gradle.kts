@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/16/23, 12:01 AM
+ *  * Last modified 8/21/23, 4:37 PM
  *
  */
 
@@ -12,6 +12,7 @@ plugins {
     id("weatherapp.android.hilt")
     id("kotlinx-serialization")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    id("org.jetbrains.dokka")
 }
 
 android {

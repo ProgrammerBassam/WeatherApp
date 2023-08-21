@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/17/23, 5:35 PM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -14,7 +14,14 @@ import com.bassamapps.weatherapp.core.model.data.WeatherHeadData
 import kotlinx.serialization.Serializable
 
 
-
+/**
+ * Network weather
+ *
+ * @property location
+ * @property current
+ * @property forecast
+ * @constructor Create empty Network weather
+ */
 @Serializable
 data class NetworkWeather (
     val location : NetworkLocation,

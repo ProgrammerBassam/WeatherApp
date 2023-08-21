@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/16/23, 1:25 AM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -11,6 +11,7 @@ plugins {
     id("weatherapp.android.library.jacoco")
     id("weatherapp.android.hilt")
     alias(libs.plugins.protobuf)
+    id("org.jetbrains.dokka")
 }
 
 android {
@@ -58,6 +59,5 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.protobuf.kotlin.lite)
 
-  //  testImplementation(project(":core:datastore-test"))
     testImplementation(project(":core:testing"))
 }

@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/16/23, 10:04 PM
+ *  * Last modified 8/21/23, 6:50 PM
  *
  */
 
@@ -28,6 +28,16 @@ import androidx.compose.ui.unit.dp
 import com.bassamapps.weatherapp.core.designsystem.component.WeButton
 import com.bassamapps.weatherapp.core.designsystem.icon.WeIcons
 
+/**
+ * Error type
+ *
+ * @property icon
+ * @property errorMessageResource
+ * @property errorMessage
+ * @property buttonText
+ * @property onReloadClick
+ * @constructor Create empty Error type
+ */
 enum class ErrorType(
     val icon: ImageVector,
     val errorMessageResource: Int?,
@@ -36,6 +46,11 @@ enum class ErrorType(
     var onReloadClick: () -> Unit
 ) {
 
+    /**
+     * Non Error
+     *
+     * @constructor Create empty Non Error
+     */
     NON_ERROR(
         icon = WeIcons.NoInternet,
         errorMessageResource = R.string.not_connected,
@@ -43,6 +58,12 @@ enum class ErrorType(
         buttonText = R.string.reload,
         onReloadClick = { /* Handle network error reload */ }
     ),
+
+    /**
+     * Exception Error
+     *
+     * @constructor Create empty Exception Error
+     */
     EXCEPTION_ERROR(
         icon = WeIcons.Error,
         errorMessageResource = null,
@@ -50,6 +71,12 @@ enum class ErrorType(
         buttonText = R.string.reload,
         onReloadClick = { /* Handle network error reload */ }
     ),
+
+    /**
+     * Api Error
+     *
+     * @constructor Create empty Api Error
+     */
     API_ERROR(
         icon = WeIcons.Error,
         errorMessageResource = null,
@@ -59,6 +86,14 @@ enum class ErrorType(
     ),
 }
 
+/**
+ * Error screen
+ *
+ * @param message
+ * @param modifier
+ * @param onClickRefresh
+ * @receiver
+ */
 @Composable
 fun ErrorScreen(
     message:String,

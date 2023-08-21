@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/19/23, 2:07 AM
+ *  * Last modified 8/20/23, 2:14 AM
  *
  */
 
@@ -15,6 +15,16 @@ import com.bassamapps.weatherapp.core.network.model.util.StringTimeSerializer
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
 
+/**
+ * Network forecast day
+ *
+ * @property date
+ * @property dateEpoch
+ * @property day
+ * @property astro
+ * @property hour
+ * @constructor Create empty Network forecast day
+ */
 @Serializable
 data class NetworkForecastDay (
     val date      : String,
@@ -25,6 +35,31 @@ data class NetworkForecastDay (
     val hour      : ArrayList<NetworkHour>
 )
 
+/**
+ * Network day
+ *
+ * @property maxTempC
+ * @property maxTempF
+ * @property minTempC
+ * @property minTempF
+ * @property avgTempC
+ * @property avgTempF
+ * @property maxWindMph
+ * @property maxWindKph
+ * @property totalPrecipMm
+ * @property totalPrecipIn
+ * @property totalSnowCm
+ * @property avgVisKm
+ * @property avgVisMiles
+ * @property avgHumidity
+ * @property dailyWillItRain
+ * @property dailyChanceOfRain
+ * @property dailyWillItSnow
+ * @property dailyChanceOfSnow
+ * @property condition
+ * @property uv
+ * @constructor Create empty Network day
+ */
 @Serializable
 data class NetworkDay (
     @Serializable(StringSerializer::class)
@@ -72,6 +107,19 @@ data class NetworkDay (
     val uv                : Double
 )
 
+/**
+ * Network astro
+ *
+ * @property sunrise
+ * @property sunset
+ * @property moonrise
+ * @property moonset
+ * @property moonPhase
+ * @property moonIllumination
+ * @property isMoonUp
+ * @property isSunUp
+ * @constructor Create empty Network astro
+ */
 @Serializable
 data class NetworkAstro(
     val sunrise          : String,
@@ -88,6 +136,44 @@ data class NetworkAstro(
     val isSunUp          : Double
 )
 
+/**
+ * Network hour
+ *
+ * @property timeEpoch
+ * @property time
+ * @property tempC
+ * @property tempF
+ * @property isDay
+ * @property condition
+ * @property windMph
+ * @property windKph
+ * @property windDegree
+ * @property windDir
+ * @property pressureMb
+ * @property pressureIn
+ * @property precipMm
+ * @property precipIn
+ * @property humidity
+ * @property cloud
+ * @property feelsLikeC
+ * @property feelsLikeF
+ * @property windChillC
+ * @property windChillF
+ * @property heatIndexC
+ * @property heatIndexF
+ * @property dewPointC
+ * @property dewPointF
+ * @property willItRain
+ * @property chanceOfRain
+ * @property willItSnow
+ * @property chanceOfSnow
+ * @property visKm
+ * @property visMiles
+ * @property gustMph
+ * @property gustKph
+ * @property uv
+ * @constructor Create empty Network hour
+ */
 @Serializable
 data class NetworkHour(
     @SerialName("time_epoch")

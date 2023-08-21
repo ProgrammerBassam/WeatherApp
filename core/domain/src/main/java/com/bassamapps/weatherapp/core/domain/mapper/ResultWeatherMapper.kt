@@ -1,8 +1,8 @@
 /*
  * *
- *  * Created by Bassam Abdulrazzaq on 8/21/23, 5:13 PM
+ *  * Created by Bassam Abdulrazzaq on 8/21/23, 10:51 PM
  *  * Copyright (c) 2023 . All rights reserved.
- *  * Last modified 8/21/23, 5:13 PM
+ *  * Last modified 8/21/23, 9:56 PM
  *
  */
 
@@ -31,13 +31,27 @@ import java.util.Calendar
 import java.util.Locale
 import javax.inject.Inject
 
+/**
+ * Result weather mapper
+ *
+ * @property context
+ * @property resourcesProvider
+ * @constructor Create empty Result weather mapper
+ */
 class ResultWeatherMapper @Inject constructor(
     @ApplicationContext private val context: Context,
     private val resourcesProvider: ResourcesProvider,
 )  {
 
 
-     fun mapFromApiResponse(data: WeatherResult, us: StateFlow<UserData>): WeatherData {
+    /**
+     * Map from api response
+     *
+     * @param data
+     * @param us
+     * @return
+     */
+    fun mapFromApiResponse(data: WeatherResult, us: StateFlow<UserData>): WeatherData {
          val userData = us.value
          Log.e("Mapppper ", userData.isTempC.toString())
         return WeatherData(
