@@ -2,7 +2,7 @@
 Weather App Task that load weather data accroding to the user current location and has the ability to search about weather in different cities and states.
 
 # APK Link
-[Download APK](https://developer.android.com/kotlin/flow)
+[Download APK](https://www.mediafire.com/file/zrl2a9ijw5qp0xj/app-prod-debug.apk/file)
 
 # Build Versions
   * Min SDK is 21
@@ -51,10 +51,6 @@ The data flow is achieved using streams, implemented using [Kotlin Flows](https:
 <center>
 <img src="https://i.ibb.co/CKg5CmV/architecture-1-overall.png" width="600px" alt="Diagram showing overall app architecture" />
 </center>
-
-### Example: Displaying weather data on the Home screen
-When the app is first run it will attempt to load weather data from server if location not granted it will ask for the location permission . Once loaded, these are shown to the user based on the current location.
-
 
 # UI
 The app was designed using [Material 3 guidelines](https://m3.material.io/).
