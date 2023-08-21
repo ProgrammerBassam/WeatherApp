@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+  ~  * Copyright (c) 2023 . All rights reserved.
+  ~  * Last modified 8/18/23, 10:58 PM
+  ~  */
+  -->
+
+<resources>
+
+
+
+    <string name="uv_index">UV index</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind">Wind</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sunset">Sunset</string>
+
+    <string name="location_permission_not_granted">Location permission not granted or GPS is not enabled!</string>
+
+</resources>

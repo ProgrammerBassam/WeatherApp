@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /**
+  ~  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+  ~  * Copyright (c) 2023 . All rights reserved.
+  ~  * Last modified 8/16/23, 9:54 PM
+  ~  */
+  -->
+<resources>
+    <string name="language">en</string>
+
+</resources>

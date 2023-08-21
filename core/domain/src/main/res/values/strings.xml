@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+  ~  * Copyright (c) 2023 . All rights reserved.
+  ~  * Last modified 8/19/23, 10:27 PM
+  ~  */
+  -->
+
+<resources>
+
+    <string name="low">Low</string>
+    <string name="high">High</string>
+    <string name="moderate">Moderate</string>
+
+    <string name="c_temp">C</string>
+    <string name="f_temp">F</string>
+    <string name="km_per_h">km/h</string>
+    
+    <string name="sunday">Sunday</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    
+
+
+</resources>

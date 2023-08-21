@@ -1,0 +1,65 @@
+[
+  {
+    "id": 2749142,
+    "name": "Sanaa",
+    "region": "San",
+    "country": "Yemen",
+    "lat": 15.35,
+    "lon": 44.21,
+    "url": "sanaa-san-yemen"
+  },
+  {
+    "id": 1246656,
+    "name": "Sanandaj",
+    "region": "Kordestan",
+    "country": "Iran",
+    "lat": 35.31,
+    "lon": 46.99,
+    "url": "sanandaj-kordestan-iran"
+  },
+  {
+    "id": 1808417,
+    "name": "Sana",
+    "region": "Lambayeque",
+    "country": "Peru",
+    "lat": -6.92,
+    "lon": -79.58,
+    "url": "sana-lambayeque-peru"
+  },
+  {
+    "id": 1131353,
+    "name": "Sanawad",
+    "region": "Madhya Pradesh",
+    "country": "India",
+    "lat": 22.18,
+    "lon": 76.07,
+    "url": "sanawad-madhya-pradesh-india"
+  },
+  {
+    "id": 1131351,
+    "name": "Sanaur",
+    "region": "Punjab",
+    "country": "India",
+    "lat": 30.3,
+    "lon": 76.46,
+    "url": "sanaur-punjab-india"
+  },
+  {
+    "id": 1131351,
+    "name": "Sanaur",
+    "region": "Punjab",
+    "country": "India",
+    "lat": 30.3,
+    "lon": 76.46,
+    "url": "sanaur-punjab-india"
+  },
+  {
+    "id": 1131351,
+    "name": "Sanaur",
+    "region": "Punjab",
+    "country": "India",
+    "lat": 30.3,
+    "lon": 76.46,
+    "url": "sanaur-punjab-india"
+  }
+]

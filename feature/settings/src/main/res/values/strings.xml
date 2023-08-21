@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /**
+  ~  * Created by Bassam Abdulrazzaq on 8/20/23, 2:14 AM
+  ~  * Copyright (c) 2023 . All rights reserved.
+  ~  * Last modified 8/16/23, 4:20 PM
+  ~  */
+  -->
+<resources>
+    <string name="top_app_bar_action_icon_description">Search</string>
+    <string name="top_app_bar_navigation_icon_description">Menu</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="loading">Loading…</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="licenses">Licenses</string>
+    <string name="brand_guidelines">Brand Guidelines</string>
+    <string name="feedback">Feedback</string>
+    <string name="theme">Theme</string>
+    <string name="brand_default">Default</string>
+    <string name="brand_android">Android</string>
+    <string name="dark_mode_preference">Dark mode preference</string>
+    <string name="dark_mode_config_system_default">System default</string>
+    <string name="dark_mode_config_light">Light</string>
+    <string name="dark_mode_config_dark">Dark</string>
+    <string name="dynamic_color_preference">Use Dynamic Color</string>
+    <string name="dynamic_color_yes">Yes</string>
+    <string name="dynamic_color_no">No</string>
+    <string name="dismiss_dialog_button_text">OK</string>
+
+    <string name="temp_type">Temperature Degree</string>
+    <string name="temp_fahrenheit">Fahrenheit</string>
+    <string name="temp_celsius">Celsius</string>
+</resources>
